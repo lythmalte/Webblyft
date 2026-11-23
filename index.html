@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="sv" data-type="service">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Webblyft UF</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Webblyft UF bygger mobilanpassade hemsidor åt små företag på Gotland. Fast pris: 2 499 kr eller 4 499 kr. Klar på 1–2 veckor.">
+<meta name="page-type" content="service">
+<meta name="site-kind" content="other">
+<meta name="theme-color" content="#04070b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Webblyft UF – hemsidor för små företag på Gotland">
+<meta property="og:description" content="Mobilanpassade hemsidor till fast pris, från 2 499 kr. Tre gymnasieelever från Wisbygymnasiet i Visby.">
+<meta property="og:image" content="assets/team.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400..700&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  (function () {
+    var d = document.documentElement;
+    d.classList.add('js', 'm-enter');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('no-loader');
+    // Om något skript inte laddar döljs laddaren ändå efter 7 sekunder
+    window.__loaderFallback = setTimeout(function () {
+      var l = document.getElementById('loader');
+      if (l) l.classList.add('is-done');
+    }, 7000);
+  })();
+</script>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<a class="skip" href="#innehall">Hoppa till innehållet</a>
+
+<!-- Laddare -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <p class="loader__name" data-scramble-load>WEBBLYFT UF</p>
+    <p class="loader__count"><span id="loaderCount">000</span><span class="loader__pct">%</span></p>
+  </div>
+  <div class="loader__bar"><span id="loaderBar"></span></div>
+</div>
+
+<!-- 3D-scenen ligger fast bakom hela sidan -->
+<canvas class="scene" id="scene" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+
+<header class="nav" id="nav">
+  <div class="wrap nav__wrap">
+    <a class="nav__logo" href="#top" aria-label="Webblyft UF, till början">
+      <span class="nav__mark" aria-hidden="true"></span>
+      <span>Webblyft<span class="nav__uf"> UF</span></span>
+    </a>
+    <nav class="nav__links" id="navLinks" aria-label="Huvudmeny">
+      <a href="#om" data-scramble-hover>Om oss</a>
+      <a href="#teamet" data-scramble-hover>Teamet</a>
+      <a href="#varfor" data-scramble-hover>Varför oss</a>
+      <a href="#priser" data-scramble-hover>Priser</a>
+      <a href="#kontakt" class="nav__cta" data-scramble-hover>Kontakta oss</a>
+    </nav>
+    <div class="nav__tools">
+      <button class="sound" id="soundBtn" type="button" aria-pressed="false">
+        <span class="sound__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="sound__label">Ljud av</span>
+      </button>
+      <button class="nav__menu" id="menuBtn" aria-expanded="false" aria-controls="navLinks">
+      <span class="nav__menu-label">Meny</span>
+        <span class="nav__menu-lines" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="innehall">
+
+  <!-- 1. Hero -->
+  <section class="hero" id="top" data-enter>
+    <div class="wrap hero__wrap">
+      <p class="hud hero__kicker"><span class="hud__dot" aria-hidden="true"></span>Webbdesign och utveckling / Visby, Gotland</p>
+      <h1 class="hero__title" data-scramble-load>Hemsidor för små företag på Gotland</h1>
+      <p class="hero__lead">Vi är tre gymnasieelever från Visby som bygger snabba, mobilanpassade hemsidor till fast pris. Från 2&nbsp;499&nbsp;kr, klar på en vecka.</p>
+      <div class="hero__actions">
+        <a class="btn btn--solid" href="#kontakt">Kontakta oss</a>
+        <a class="btn btn--ghost" href="#priser">Se priserna</a>
+      </div>
+    </div>
+    <div class="hero__hud wrap" aria-hidden="true">
+      <span class="hud">Wisbygymnasiet / UF 2026</span>
+      <span class="hud hero__scroll">Scrolla<span class="hero__scroll-line"></span></span>
+    </div>
+  </section>
+
+  <!-- 2. Om oss / manifest -->
+  <section class="manifest" id="om">
+    <div class="wrap">
+      <p class="hud section-label" data-scramble-view>Om Webblyft</p>
+      <h2 class="manifest__text" data-words>Webblyft är ett UF-företag från Wisbygymnasiet i Visby. Vi bygger hemsidor åt frisörer, caféer, hantverkare och andra små företag som behöver synas på nätet men inte har en byråbudget. Ni får en sida som fungerar i mobilen, laddar snabbt och ser ut som ert företag.</h2>
+    </div>
+  </section>
+
+  <!-- 3. Teamet -->
+  <section class="team" id="teamet">
+    <div class="wrap team__grid">
+      <div class="team__copy">
+        <p class="hud section-label" data-scramble-view>Teamet</p>
+        <h2 class="team__title">Tre personer bygger er sida, från första samtalet till lanseringen.</h2>
+        <ul class="team__list">
+          <li class="team__person" data-person="0">
+            <span class="team__name">Malte</span>
+            <span class="team__role hud">Ekonomiansvarig</span>
+            <span class="team__does">Sköter priser, fakturor och betalningar.</span>
+          </li>
+          <li class="team__person" data-person="1">
+            <span class="team__name">Ludvig</span>
+            <span class="team__role hud">VD</span>
+            <span class="team__does">Leder företaget och håller i kundkontakten.</span>
+          </li>
+          <li class="team__person" data-person="2">
+            <span class="team__name">Joel</span>
+            <span class="team__role hud">Webmaster</span>
+            <span class="team__does">Designar och bygger hemsidorna.</span>
+          </li>
+        </ul>
+      </div>
+      <figure class="team__frame" id="teamFrame">
+        <img class="team__img" id="teamImg" src="assets/team.jpg" width="886" height="886" alt="Webblyft UF:s tre grundare i kostym: Malte med telefonen till vänster, Ludvig sittande vid ett block i mitten och Joel med två bärbara datorer till höger.">
+        <div class="team__tags" aria-hidden="true">
+          <span class="team__tag" style="--x:20%;--y:16%" data-tag="0">Malte / Ekonomi</span>
+          <span class="team__tag" style="--x:44%;--y:44%" data-tag="1">Ludvig / VD</span>
+          <span class="team__tag" style="--x:70%;--y:18%" data-tag="2">Joel / Webmaster</span>
+        </div>
+        <span class="team__corner team__corner--tl" aria-hidden="true"></span>
+        <span class="team__corner team__corner--br" aria-hidden="true"></span>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 4. Varför oss -->
+  <section class="why" id="varfor">
+    <div class="wrap">
+      <p class="hud section-label" data-scramble-view>Varför oss</p>
+      <h2 class="why__title">En stor byrå passar stora projekt. För ett litet företag som behöver en bra sida snabbt är vi det enklare valet.</h2>
+      <div class="compare" role="table" aria-label="Webblyft jämfört med en stor webbyrå">
+        <div class="compare__row compare__head" role="row">
+          <span role="columnheader"><span class="sr-only">Område</span></span>
+          <span role="columnheader" class="compare__us">Webblyft</span>
+          <span role="columnheader">Stor webbyrå</span>
+        </div>
+        <div class="compare__row" role="row">
+          <span role="rowheader" class="hud">Pris</span>
+          <span role="cell" class="compare__us">Fast pris: 2&nbsp;499 eller 4&nbsp;499&nbsp;kr. Ni vet kostnaden innan vi börjar.</span>
+          <span role="cell">Offert per projekt, som ofta landar på tiotusentals kronor.</span>
+        </div>
+        <div class="compare__row" role="row">
+          <span role="rowheader" class="hud">Kontakt</span>
+          <span role="cell" class="compare__us">Ni pratar direkt med de tre som bygger sidan.</span>
+          <span role="cell">Säljare och projektledare mellan er och utvecklaren.</span>
+        </div>
+        <div class="compare__row" role="row">
+          <span role="rowheader" class="hud">Tid</span>
+          <span role="cell" class="compare__us">Klar på ungefär 1 vecka (Start) eller 2 veckor (Lyft).</span>
+          <span role="cell">Ofta längre ledtider, eftersom ert projekt står i kö bakom större kunder.</span>
+        </div>
+        <div class="compare__row" role="row">
+          <span role="rowheader" class="hud">Plats</span>
+          <span role="cell" class="compare__us">Vi finns i Visby och kan träffa er på plats.</span>
+          <span role="cell">Möten på distans, ofta med ett kontor på fastlandet.</span>
+        </div>
+        <div class="compare__row" role="row">
+          <span role="rowheader" class="hud">Efteråt</span>
+          <span role="cell" class="compare__us">Engångspris och inga månadsavgifter till oss. Sidan är er.</span>
+          <span role="cell">Ofta avtal med löpande avgifter för drift och ändringar.</span>
+        </div>
+        <div class="compare__row" role="row">
+          <span role="rowheader" class="hud">Engagemang</span>
+          <span role="cell" class="compare__us">Varje kund blir en referens för oss, så vi lägger tid på detaljerna.</span>
+          <span role="cell">Ert projekt är ett av många samtidigt.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Priser -->
+  <section class="pricing" id="priser">
+    <div class="wrap">
+      <p class="hud section-label" data-scramble-view>Priser</p>
+      <h2 class="pricing__title">Två paket med fasta priser. Båda ger en färdig, mobilanpassad hemsida.</h2>
+      <div class="plans">
+        <article class="plan" data-tilt>
+          <div class="plan__frost" aria-hidden="true"></div>
+          <header class="plan__head">
+            <h3 class="plan__name">Start</h3>
+            <p class="plan__price"><span class="plan__amount">2&nbsp;499</span> kr</p>
+            <p class="plan__for">För er som behöver en snygg sida att hänvisa kunder till.</p>
+          </header>
+          <ul class="plan__list">
+            <li>En sida med upp till 4 delar, till exempel om oss, tjänster, öppettider och kontakt</li>
+            <li>Anpassad efter er logga och era färger</li>
+            <li>Fungerar i mobil, surfplatta och dator</li>
+            <li>Knappar för att ringa, mejla, hitta hit och följa er i sociala medier</li>
+            <li>Grundläggande sökmotoroptimering: titel och beskrivning för Google</li>
+            <li>1 ändringsrunda</li>
+            <li>Klar på ungefär 1 vecka</li>
+          </ul>
+          <a class="btn btn--ghost plan__btn" href="#kontakt" data-plan="Start (2 499 kr)">Välj Start</a>
+        </article>
+
+        <article class="plan plan--lyft" data-tilt>
+          <div class="plan__frost" aria-hidden="true"></div>
+          <header class="plan__head">
+            <h3 class="plan__name">Lyft</h3>
+            <p class="plan__price"><span class="plan__amount">4&nbsp;499</span> kr</p>
+            <p class="plan__for">För er som vill sticka ut och ta emot förfrågningar direkt på sidan.</p>
+          </header>
+          <ul class="plan__list">
+            <li>Allt som ingår i Start</li>
+            <li>Upp till 5 undersidor</li>
+            <li>Design som tas fram från grunden för ert företag</li>
+            <li>Animationer och effekter som gör sidan levande</li>
+            <li>Kontaktformulär så att kunder kan höra av sig direkt</li>
+            <li>Bildgalleri, meny eller prislista</li>
+            <li>Utökad sökmotoroptimering och hjälp med er Google-företagsprofil</li>
+            <li>Optimerade bilder och snabb laddtid</li>
+            <li>3 ändringsrundor</li>
+            <li>Klar på ungefär 2 veckor</li>
+          </ul>
+          <a class="btn btn--solid plan__btn" href="#kontakt" data-plan="Lyft (4 499 kr)">Välj Lyft</a>
+        </article>
+      </div>
+
+      <div class="pricing__notes">
+        <div class="note">
+          <h3 class="note__title">Därför kostar Lyft mer</h3>
+          <p>Lyft tar ungefär dubbelt så lång tid att bygga. Det är fler sidor att designa, en design som görs från grunden i stället för att utgå från vår beprövade grundlayout, och fler funktioner som formulär och galleri som ska byggas och testas på olika skärmar.</p>
+        </div>
+        <div class="note">
+          <h3 class="note__title">Domän och webbhotell</h3>
+          <p>Ingår inte i priset. Ni betalar dem direkt till leverantören, så står adressen alltid i ert namn. Vi hjälper er att välja och kopplar upp allt åt er.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Process -->
+  <section class="process" id="process">
+    <div class="wrap process__grid">
+      <div class="process__intro">
+        <p class="hud section-label" data-scramble-view>Så går det till</p>
+        <h2 class="process__title">Fyra steg från första samtalet till en sida som ligger ute.</h2>
+        <p class="process__lead">Ni har samma tre personer att prata med genom hela projektet. Startpaketet är klart på ungefär en vecka och Lyft på ungefär två.</p>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <span class="step__num hud" aria-hidden="true">01</span>
+          <div class="step__body">
+            <h3 class="step__title">Samtal</h3>
+            <p>Ni berättar om ert företag och vad sidan ska göra. Vi hjälper er välja paket.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__num hud" aria-hidden="true">02</span>
+          <div class="step__body">
+            <h3 class="step__title">Förslag</h3>
+            <p>Vi skickar ett första utkast så att ni ser hur sidan kommer att se ut.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__num hud" aria-hidden="true">03</span>
+          <div class="step__body">
+            <h3 class="step__title">Bygge och ändringar</h3>
+            <p>Vi bygger sidan och ni lämnar ändringar: 1 runda i Start, 3 i Lyft.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__num hud" aria-hidden="true">04</span>
+          <div class="step__body">
+            <h3 class="step__title">Lansering</h3>
+            <p>Vi kopplar sidan till er domän och lägger ut den. Sedan är den er.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 7. Kontakt -->
+  <section class="contact" id="kontakt">
+    <div class="wrap contact__grid">
+      <div class="contact__info">
+        <p class="hud section-label" data-scramble-view>Kontakt</p>
+        <h2 class="contact__title">Kontakta Webblyft</h2>
+        <p class="contact__lead">Berätta kort om ert företag så hör vi av oss. Ni kan också ringa eller skriva direkt.</p>
+        <dl class="contact__list">
+          <div>
+            <dt class="hud">E-post</dt>
+            <dd>
+              <a href="mailto:webblyftgotland@gmail.com" id="mailText">webblyftgotland@gmail.com</a>
+              <button class="copy" type="button" data-copy="webblyftgotland@gmail.com">Kopiera</button>
+            </dd>
+          </div>
+          <div>
+            <dt class="hud">Telefon</dt>
+            <dd>
+              <a href="tel:+46793472180">079-347 21 80</a>
+              <button class="copy" type="button" data-copy="0793472180">Kopiera</button>
+            </dd>
+          </div>
+          <div>
+            <dt class="hud">Instagram</dt>
+            <dd><a href="https://www.instagram.com/webblyftuf" target="_blank" rel="noopener">@webblyftuf</a></dd>
+          </div>
+          <div>
+            <dt class="hud">Facebook</dt>
+            <dd><a href="https://www.facebook.com/profile.php?id=61594599501630" target="_blank" rel="noopener">Webblyft UF</a></dd>
+          </div>
+          <div>
+            <dt class="hud">Ort</dt>
+            <dd>Visby, Wisbygymnasiet</dd>
+          </div>
+        </dl>
+      </div>
+
+      <form class="form" id="contactForm" novalidate>
+        <div class="field">
+          <label for="f-name">Namn</label>
+          <input id="f-name" name="namn" type="text" autocomplete="name" required>
+          <p class="field__error" id="e-name" hidden>Skriv ert namn.</p>
+        </div>
+        <div class="field">
+          <label for="f-company">Företag</label>
+          <input id="f-company" name="foretag" type="text" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="f-email">E-post</label>
+          <input id="f-email" name="epost" type="email" autocomplete="email" required>
+          <p class="field__error" id="e-email" hidden>Skriv en e-postadress som vi kan svara till, till exempel namn@foretag.se.</p>
+        </div>
+        <div class="field">
+          <label for="f-plan">Paket</label>
+          <div class="select">
+            <select id="f-plan" name="paket">
+              <option>Vet inte än</option>
+              <option>Start (2 499 kr)</option>
+              <option>Lyft (4 499 kr)</option>
+            </select>
+          </div>
+        </div>
+        <div class="field field--wide">
+          <label for="f-msg">Meddelande</label>
+          <textarea id="f-msg" name="meddelande" rows="5" required></textarea>
+          <p class="field__error" id="e-msg" hidden>Skriv några rader om ert företag och vad ni behöver.</p>
+        </div>
+        <div class="form__foot field--wide">
+          <button class="btn btn--solid" type="submit">Skicka förfrågan</button>
+          <p class="form__status" id="formStatus" role="status" hidden></p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="footer__big" id="footerBig" aria-label="Webblyft">WEBBLYFT</p>
+    <div class="footer__row">
+      <p class="footer__about">UF-företag inom Ung Företagsamhet, Wisbygymnasiet i Visby.</p>
+      <nav class="footer__links" aria-label="Sidfot">
+        <a href="#om" data-scramble-hover>Om oss</a>
+        <a href="#priser" data-scramble-hover>Priser</a>
+        <a href="https://www.instagram.com/webblyftuf" target="_blank" rel="noopener" data-scramble-hover>Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61594599501630" target="_blank" rel="noopener" data-scramble-hover>Facebook</a>
+      </nav>
+      <p class="footer__copy hud">© 2026 Webblyft UF</p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
